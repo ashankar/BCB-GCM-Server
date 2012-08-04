@@ -32,9 +32,9 @@ public class BaseServlet extends HttpServlet {
 
 	}
 
-	protected String getParameter(HttpServletRequest request, String parameter)
+	protected String getParameter(HttpServletRequest request, String did)
 			throws ServletException {
-		String value = request.getParameter(parameter);
+		String value = request.getParameter(did);
 		if (value == null || value.trim().isEmpty()) {
 			if (DEBUG) {
 				StringBuilder parameters = new StringBuilder();
@@ -50,7 +50,7 @@ public class BaseServlet extends HttpServlet {
 				logger.fine("Parameters: " + parameters);
 			}
 
-			throw new ServletException("Parameter: " + parameter + " not found");
+			throw new ServletException("Device ID: " + did + " not found");
 		}
 
 		return value.trim();

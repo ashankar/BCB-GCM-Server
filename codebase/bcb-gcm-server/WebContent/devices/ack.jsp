@@ -4,16 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bar Camp Bangalore</title>
+<title>Insert title here</title>
 </head>
 <body>
 
-<ul>
-<li><a href="devices/register.jsp">Register devices</a></li>
-<li><a href="devices/unregister.jsp">Unregister devices</a></li>
-<li><a href="devices/view.jsp">Show registered devices</a></li>
-<li><a href="messages/messageEditor.jsp">Send Message</a></li>
-</ul>
+<%=request.getAttribute("did") + " " + request.getAttribute("msg") %>
 
+<br><br><br><a href="index.jsp">Back</a>
 </body>
 </html>

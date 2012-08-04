@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>bcb-gcm-server</display-name>
+  
+  <listener>
+      <listener-class>org.bcb.gcm.servlet.ApiKeyInitializer</listener-class>
+  </listener>
+  
+  <servlet>
+      <servlet-name>RegisterDevice</servlet-name>
+      <servlet-class>org.bcb.gcm.servlet.RegisterDevice</servlet-class>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>RegisterDevice</servlet-name>
+      <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>UnRegisterDevice</servlet-name>
+      <servlet-class>org.bcb.gcm.servlet.UnRegisterDevice</servlet-class>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>UnRegisterDevice</servlet-name>
+      <url-pattern>/unregister</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+      <servlet-name>SendMessage</servlet-name>
+      <servlet-class>org.bcb.gcm.servlet.SendMessage</servlet-class>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>SendMessage</servlet-name>
+      <url-pattern>/send</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>HomeServlet</servlet-name>
+      <servlet-class>org.bcb.gcm.servlet.HomeServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>HomeServlet</servlet-name>
+      <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
+  
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
