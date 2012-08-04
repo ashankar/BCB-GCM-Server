@@ -26,7 +26,6 @@ public class UnRegisterDevice extends BaseServlet {
 
 			String did = getParameter(request, IString.DEVICE_ID);
 			DataStore.unregister(did);
-
 			request.setAttribute("did", did);
 			request.setAttribute("msg", " unregistered");
 			RequestDispatcher rd = request

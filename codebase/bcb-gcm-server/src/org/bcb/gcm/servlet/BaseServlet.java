@@ -68,15 +68,4 @@ public class BaseServlet extends HttpServlet {
 
 	}
 
-	protected void setSuccess(HttpServletResponse response) {
-		setSuccess(response, 0);
-	}
-
-	protected void setSuccess(HttpServletResponse response, int size) {
-		response.setStatus(HttpServletResponse.SC_OK);
-		response.setContentType("text/plain");
-		response.setContentLength(size);
-
-	}
-
 }
